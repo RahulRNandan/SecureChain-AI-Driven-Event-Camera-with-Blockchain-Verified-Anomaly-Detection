@@ -1,11 +1,17 @@
-# inference.py - Inference Engine (Stub)
+import numpy as np
+from model import AnomalyDetectionModel
 
-from model import SimpleAnomalyDetector
-import torch
+def load_model():
+    model = AnomalyDetectionModel()
+    model.model = tf.keras.models.load_model('anomaly_detection_model.h5')
+    return model
 
-def infer(input_tensor):
-    model = SimpleAnomalyDetector(input_dim=10)
-    model.eval()
-    with torch.no_grad():
-        output = model(input_tensor)
-    return output
+def detect_anomaly(data):
+    model = load_model()
+    prediction = model.predict(np.array([data]))
+    return prediction[0] > 0.5  # Assuming 1 is anomaly and 0 is normal
+
+if __name__ == '__main__':
+    data = np.load('data/test_event.npy')  # Example test data
+    is_anomaly = detect_anomaly(data)
+    print(f"Anomaly Detected: {is_anomaly}")
