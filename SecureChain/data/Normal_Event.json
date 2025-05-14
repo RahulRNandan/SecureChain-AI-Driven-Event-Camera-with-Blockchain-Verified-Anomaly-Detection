@@ -1,0 +1,5 @@
+[
+  {"timestamp": 100, "x": 12, "y": 30, "polarity": 1},
+  {"timestamp": 105, "x": 13, "y": 31, "polarity": 0},
+  {"timestamp": 110, "x": 12, "y": 29, "polarity": 1}
+]
