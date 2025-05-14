@@ -1,3 +1,23 @@
-torch
+# Core Python Dependencies
+numpy
+pandas
+scikit-learn
+matplotlib
+
+# Deep Learning / AI
+tensorflow>=2.8.0  # or torch if you're using PyTorch instead
+opencv-python
+joblib
+
+# Blockchain Integration
 web3
-flask
+eth_account
+
+# Camera and Image Handling
+imageio
+pyzmq
+asyncio
+
+# Misc
+python-dotenv  # for handling .env configs
+requests
